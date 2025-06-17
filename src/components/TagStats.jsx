@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getTagSummary, getSessionHistory } from '../utils/storage';
+import {  getSessionHistory } from '../utils/storage';
 
 /**
  * Componente que muestra estadísticas detalladas del uso de Pomodoro
