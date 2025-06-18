@@ -1,12 +1,22 @@
-# React + Vite
+# Pomodoro App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚧 **This project is currently under active development. Features, structure, and design may change frequently.**  
 
-Currently, two official plugins are available:
+A simple pomodoro timer built with [React](https://react.dev/) and [Vite](https://vitejs.dev/). The application allows you to track focused work and break sessions, categorise each session with tags and review basic statistics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Work and break modes** &ndash; switch automatically or manually between focus and rest.
+- **Custom durations** &ndash; configure the minutes for each mode when the timer is paused.
+- **Tag selector** &ndash; create and assign activity tags to your sessions.
+- **Session history and summary** &ndash; stored locally so statistics are preserved between visits.
+- **Dark themed interface** with a responsive layout.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting started
+
+```bash
+# install dependencies
+npm install
+
+# start development server
+npm run dev
