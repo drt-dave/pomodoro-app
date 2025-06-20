@@ -71,14 +71,14 @@ console.log("Modo actual:", mode);
 		  className={mode === "work" ? "active" : ""}
 		  aria-label="Cambiar al modo trabajo"
 		>
-		  Modo Trabajo
+		 Focus 
 		</button>
 		<button
 		  onClick={() => switchMode("break")}
 		  className={mode === "break" ? "active" : ""}
 		  aria-label="Cambiar al modo descanso"
 		>
-		  Modo Descanso
+		   Break
 		</button>
 	  </div>
 	</div>

@@ -1,21 +1,21 @@
 /*-----------------------------------------
-  Global color variables
-  These values define the modern color palette
+Global color variables
+These values define the modern color palette
 -----------------------------------------*/
 /* Light mode
 :root {
-  --work-color: #ff3b30;
-  --break-color: #4ecdc4;
-  --bg-color: #f9f9f9;
-  --text-color: #333;
-  --accent: #ff9f1c;
-  --card-bg: #ffffff;
-  --nav-bg: var(--work-color);
-  --nav-text: #ffffff;
-  --input-bg: #ffffff;
-  --input-text: #333;
+--work-color: #ff3b30;
+--break-color: #4ecdc4;
+--bg-color: #f9f9f9;
+--text-color: #333;
+--accent: #ff9f1c;
+--card-bg: #ffffff;
+--nav-bg: var(--work-color);
+--nav-text: #ffffff;
+--input-bg: #ffffff;
+--input-text: #333;
 }
-*/
+ */
 
 /* Dark mode */
 :root {
@@ -31,7 +31,7 @@
   --input-text: #ffffff;       /* white input text */
 }
 /*-----------------------------------------
-  Base layout styles
+Base layout styles
 -----------------------------------------*/
 body {
   margin: 0;
@@ -52,7 +52,7 @@ body {
 }
 
 /*-----------------------------------------
-  Header styles
+Header styles
 -----------------------------------------*/
 .app-header {
   text-align: center;
@@ -67,7 +67,7 @@ body {
 }
 
 /*-----------------------------------------
-  Main content area
+Main content area
 -----------------------------------------*/
 .main-content {
   display: flex;
@@ -84,7 +84,7 @@ body {
 }
 
 /*-----------------------------------------
-  Timer component styles
+Timer component styles
 -----------------------------------------*/
 
 .timer-container {
@@ -201,49 +201,73 @@ body {
 }
 
 /*-----------------------------------------
-  Tag selector component
+Tag selector component
 -----------------------------------------*/
 .tag-selector {
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 .tag-dropdown {
   font-size: 1rem;
+  max-width: 280px; /* limita el ancho */
+  margin: auto; /*limita visualmente */
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-bottom: 0.5rem;
   background: var(--input-bg);
   color: var(--input-text);
+  width: 100%;
+  box-sizing: border-box; /*centre horizontalmente */
+}
+
+.tag-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .add-tag-wrapper {
   display: flex;
+  width: 100;
+  max-width:  280px; /* igual ancho que el select */
+  margin: 0 auto; /*centro*/
   gap: 0.5rem;
+
 }
 
 .add-tag-wrapper input {
+  flex: 1;/* Espande el input a ocupar el espacio restante */
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--input-text));
+  box-sizing: border-box;
 }
 
 .add-tag-wrapper button {
   background: var(--accent);
   color: var(--nav-text);
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   border: none;
   border-radius: 6px;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
 /*-----------------------------------------
-  Statistics component wrapper
+Statistics component wrapper
 -----------------------------------------*/
 .stats-card {
   width: 100%;
@@ -257,7 +281,7 @@ body {
 }
 
 /*-----------------------------------------
-  Bottom navigation bar
+Bottom navigation bar
 -----------------------------------------*/
 .bottom-nav {
   background-color: var(--nav-bg);
@@ -285,7 +309,7 @@ body {
 }
 
 /*-----------------------------------------
-  Card container used across views
+Card container used across views
 -----------------------------------------*/
 .card {
   background-color: var(--card-bg);
@@ -299,19 +323,19 @@ body {
 }
 
 /*-----------------------------------------
-  Mobile adjustments
+Mobile adjustments
 -----------------------------------------*/
 @media (max-width: 480px) {
   .card {
-    padding: 1rem;
-    border-radius: 12px;
+	padding: 1rem;
+	border-radius: 12px;
   }
 
   .logo-title {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
   }
 
   .timer-display .time {
-    font-size: 3rem;
+	font-size: 3rem;
   }
 }
