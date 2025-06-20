@@ -1,341 +1,337 @@
+
 /*-----------------------------------------
-Global color variables
-These values define the modern color palette
+ Global color variables
+ These values define the modern color palette
 -----------------------------------------*/
 /* Light mode
 :root {
---work-color: #ff3b30;
---break-color: #4ecdc4;
---bg-color: #f9f9f9;
---text-color: #333;
---accent: #ff9f1c;
---card-bg: #ffffff;
---nav-bg: var(--work-color);
---nav-text: #ffffff;
---input-bg: #ffffff;
---input-text: #333;
+  --work-color: #ff3b30;     
+  --break-color: #4ecdc4;   
+  --bg-color: #f9f9f9;     
+  --text-color: #333333;  
+  --accent: #ff9f1c;     
+  --card-bg: #ffffff;   
+  --nav-bg: var(--work-color);
+  --nav-text: #ffffff;       
+  --input-bg: #ffffff;      
+  --input-text: #333333;   
 }
- */
+*/
 
 /* Dark mode */
 :root {
-  --work-color: #ff3b30;       /* strong red for work */
-  --break-color: #4ecdc4;      /* vibrant teal for breaks */
-  --bg-color: #121212;         /* deep dark background */
-  --text-color: #e0e0e0;       /* light gray text */
-  --accent: #ff9f1c;           /* bright orange highlight */
-  --card-bg: #1e1e1e;          /* dark gray cards */
-  --nav-bg: #b30000;           /* deep red navbar */
-  --nav-text: #ffffff;         /* white nav text */
-  --input-bg: #2a2a2a;         /* dark input background */
-  --input-text: #ffffff;       /* white input text */
+  --work-color: #ff3b30;      /* strong red for work */
+  --break-color: #4ecdc4;     /* vibrant teal for breaks */
+  --bg-color: #121212;        /* deep dark background */
+  --text-color: #e0e0e0;      /* light gray text */
+  --accent: #ff9f1c;          /* bright orange highlight */
+  --card-bg: #1e1e1e;         /* dark gray cards */
+  --nav-bg: #b30000;          /* deep red navbar */
+  --nav-text: #ffffff;        /* white nav text */
+  --input-bg: #2a2a2a;        /* dark input background */
+  --input-text: #ffffff;      /* white input text */
 }
+
 /*-----------------------------------------
-Base layout styles
+ Base layout styles
 -----------------------------------------*/
 body {
-  margin: 0;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  margin: 0;                             /* remove default margin */
+  font-family: 'Segoe UI', system-ui, sans-serif; /* set base font stack */
+  background: var(--bg-color);           /* use background color variable */
+  color: var(--text-color);             /* use text color variable */
+  display: flex;                         /* enable flex layout */
+  flex-direction: column;               /* stack children vertically */
+  min-height: 100vh;                    /* span full viewport height */
 }
 
 .app {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
+  flex: 1;                              /* allow to grow and fill space */
+  display: flex;                        /* enable flex layout */
+  flex-direction: column;              /* stack children vertically */
+  align-items: center;                 /* center children horizontally */
+  padding: 2rem 1rem;                  /* add padding around content */
 }
 
 /*-----------------------------------------
-Header styles
+ Header styles
 -----------------------------------------*/
 .app-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: center;                  /* center text */
+  margin-bottom: 2rem;                 /* add space below header */
 }
 
 .logo-title {
-  font-size: 2rem;
-  letter-spacing: 2px;
-  font-weight: bold;
-  color: var(--work-color);
+  font-size: 2rem;                     /* set large font size */
+  letter-spacing: 2px;                 /* space out letters */
+  font-weight: bold;                   /* bold weight */
+  color: var(--work-color);            /* use work color variable */
 }
 
 /*-----------------------------------------
-Main content area
+ Main content area
 -----------------------------------------*/
 .main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  display: flex;                        /* enable flex layout */
+  flex-direction: column;              /* stack children vertically */
+  align-items: center;                 /* center children horizontally */
+  width: 100%;                          /* use full width */
 }
 
 .mode-subtitle {
-  font-size: 1rem;
-  margin-top: 1rem;
-  color: var(--text-color);
-  text-align: center;
+  font-size: 1rem;                     /* set base font size */
+  margin-top: 1rem;                    /* add space above */
+  color: var(--text-color);           /* use text color variable */
+  text-align: center;                  /* center text */
 }
 
 /*-----------------------------------------
-Timer component styles
+ Timer component styles
 -----------------------------------------*/
-
 .timer-container {
-  text-align: center;
+  text-align: center;                  /* center text in container */
 }
 
 .timer-display {
-  margin: 0.5rem 0;
+  margin: 0.5rem 0;                    /* vertical spacing around display */
 }
 
-/* Countdown display when running */
 .timer-display .time {
-  font-size: 4rem;
-  font-weight: 700;
-  margin: 0.5rem 0;
+  font-size: 4rem;                     /* very large time font */
+  font-weight: 700;                    /* heavy font weight */
+  margin: 0.5rem 0;                    /* vertical spacing */
 }
 
-/* Editable input field for minutes (only when paused) */
 .time-input {
-  font-size: 4rem;
-  font-weight: bold;
-  text-align: center;
-  width: 130px;
-  background: none;
-  border: none;
-  color: var(--text-color);
-  outline: none;
-  transition: border-bottom 0.2s ease;
+  font-size: 4rem;                     /* match time display size */
+  font-weight: bold;                   /* bold font weight */
+  text-align: center;                  /* center text inside */
+  width: 130px;                        /* fixed width for input */
+  background: none;                    /* transparent background */
+  border: none;                        /* remove border */
+  color: var(--text-color);            /* use text color variable */
+  outline: none;                       /* remove focus outline */
+  transition: border-bottom 0.2s ease; /* smooth focus border transition */
 }
 
-/* Style when input is focused */
 .time-input:focus {
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent); /* underline on focus */
 }
 
-/* Hide default up/down arrows on number inputs */
 .time-input::-webkit-outer-spin-button,
 .time-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+  -webkit-appearance: none;            /* hide spin buttons in WebKit */
+  margin: 0;                           /* remove default margin */
 }
 
 .time-input {
-  -moz-appearance: textfield; /* Firefox */
-  appearance: textfield;
+  -moz-appearance: textfield;          /* hide spin in Firefox */
+  appearance: textfield;               /* hide native number arrows */
 }
 
 /* Mode color indicators */
 .mode-indicator.work {
-  color: var(--work-color);
+  color: var(--work-color);            /* work mode color */
 }
 
 .mode-indicator.break {
-  color: var(--break-color);
+  color: var(--break-color);           /* break mode color */
 }
 
 /* Controls shown when timer is paused */
 .timer-controls {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  margin-bottom: 1rem;                 /* space below controls */
+  display: flex;                       /* enable flex layout */
+  flex-direction: column;             /* stack children vertically */
+  gap: 1rem;                           /* spacing between controls */
 }
 
-/* Optional legacy adjustment input (can be removed if unused) */
+/* Optional legacy adjustment input */
 .time-adjustment input {
-  width: 80px;
-  padding: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  text-align: center;
-  background: var(--input-bg);
-  color: var(--input-text);
+  width: 80px;                         /* fixed width */
+  padding: 0.5rem;                     /* internal spacing */
+  border-radius: 8px;                  /* rounded corners */
+  border: 1px solid #ccc;             /* light border */
+  text-align: center;                  /* center text */
+  background: var(--input-bg);         /* use input background variable */
+  color: var(--input-text);            /* use input text variable */
 }
 
 /* Mode selection buttons */
 .mode-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
+  display: flex;                       /* enable flex layout */
+  justify-content: center;            /* center buttons horizontally */
+  gap: 0.5rem;                         /* space between buttons */
 }
 
 .mode-buttons button {
-  padding: 0.5rem 0.5rem;
-  border: none;
-  border-radius: 6px;
-  background: var(--card-bg);
-  color: var(--text-color);
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
+  padding: 0.5rem 0.5rem;              /* internal spacing */
+  border: none;                        /* remove default border */
+  border-radius: 6px;                  /* rounded corners */
+  background: var(--card-bg);          /* card background color */
+  color: var(--text-color);            /* use text color variable */
+  cursor: pointer;                     /* pointer on hover */
+  display: flex;                       /* enable flex for centering */
+  align-items: center;                /* center icon/text vertically */
+  justify-content: center;             /* center icon/text horizontally */
 }
 
 .mode-buttons button.active {
-  background: var(--accent);
-  color: var(--nav-text);
+  background: var(--accent);           /* accent background when active */
+  color: var(--nav-text);              /* nav text color when active */
 }
 
 /* Start/Pause button */
 .main-button {
-  padding: 0.75rem 1.5rem;
-  width: 100%;
-  max-width: 200px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  color: var(--nav-text);
-  background: var(--work-color);
+  padding: 0.75rem 1.5rem;             /* internal spacing */
+  width: 100%;                         /* full width of container */
+  max-width: 200px;                    /* limit width */
+  font-size: 1rem;                     /* base font size */
+  border: none;                        /* remove default border */
+  border-radius: 6px;                  /* rounded corners */
+  cursor: pointer;                     /* pointer on hover */
+  color: var(--nav-text);              /* use nav text color variable */
+  background: var(--work-color);       /* use work color variable */
 }
 
 .main-button.pause {
-  background: #666;
+  background: #666666;                 /* darker background when paused */
 }
 
 /*-----------------------------------------
-Tag selector component
+ Tag selector component
 -----------------------------------------*/
 .tag-selector {
-  margin: 1rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.tag-dropdown {
-  font-size: 1rem;
-  max-width: 280px; /* limita el ancho */
-  margin: auto; /*limita visualmente */
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 0.5rem;
-  background: var(--input-bg);
-  color: var(--input-text);
-  width: 100%;
-  box-sizing: border-box; /*centre horizontalmente */
+  margin: 1rem auto;                   /* vertical margin and center */
+  display: flex;                       /* enable flex layout */
+  flex-direction: column;             /* stack children vertically */
+  align-items: stretch;                /* stretch children to full width */
 }
 
 .tag-input-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  width: 100%;                         /* full width of parent */
+  display: flex;                       /* enable flex layout */
+  flex-direction: column;             /* stack dropdown and input vertically */
+  gap: 0.5rem;                         /* space between elements */
+}
+
+.tag-dropdown {
+  font-size: 1rem;                     /* base font size */
+  max-width: 280px;                    /* restrict width */
+  margin: 0 auto;                      /* center horizontally */
+  padding: 0.5rem 1rem;                /* internal spacing */
+  border-radius: 8px;                  /* rounded corners */
+  border: 1px solid #cccccc;          /* light gray border */
+  margin-bottom: 0.5rem;               /* space below dropdown */
+  background: var(--input-bg);         /* use input background variable */
+  color: var(--input-text);            /* use input text variable */
+  width: 100%;                         /* fill available width */
+  box-sizing: border-box;              /* include padding and border in width */
 }
 
 .add-tag-wrapper {
-  display: flex;
-  width: 100;
-  max-width:  280px; /* igual ancho que el select */
-  margin: 0 auto; /*centro*/
-  gap: 0.5rem;
-
+  display: flex;                       /* enable flex layout */
+  width: 100%;                         /* full width of parent */
+  max-width: 280px;                    /* match dropdown width */
+  margin: 0 auto;                      /* center horizontally */
+  gap: 0.5rem;                         /* space between input and button */
 }
 
 .add-tag-wrapper input {
-  flex: 1;/* Espande el input a ocupar el espacio restante */
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  background: var(--input-bg);
-  color: var(--input-text));
-  box-sizing: border-box;
+  flex: 1;                             /* grow to fill available space */
+  padding: 0.5rem;                     /* internal spacing */
+  border-radius: 6px;                  /* rounded corners */
+  border: 1px solid #cccccc;          /* light gray border */
+  font-size: 1rem;                     /* base font size */
+  background: var(--input-bg);         /* use input background variable */
+  color: var(--input-text);            /* use input text variable */
+  box-sizing: border-box;              /* include padding and border in width */
 }
 
 .add-tag-wrapper button {
-  background: var(--accent);
-  color: var(--nav-text);
-  font-size: 1.2rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  padding: 0 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--accent);           /* use accent color */
+  color: var(--nav-text);              /* use nav text color variable */
+  font-size: 1.2rem;                   /* slightly larger font */
+  font-weight: bold;                   /* bold text */
+  border: none;                        /* remove default border */
+  border-radius: 6px;                  /* rounded corners */
+  padding: 0 1rem;                     /* horizontal padding */
+  cursor: pointer;                     /* pointer on hover */
+  display: flex;                       /* enable flex for centering */
+  align-items: center;                /* center icon/text vertically */
+  justify-content: center;             /* center icon/text horizontally */
 }
 
-
 /*-----------------------------------------
-Statistics component wrapper
+ Statistics component wrapper
 -----------------------------------------*/
 .stats-card {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;                         /* full width of parent */
+  max-width: 800px;                    /* restrict maximum width */
+  margin: 0 auto;                      /* center horizontally */
 }
 
 .loading-stats,
 .no-data {
-  color: #666;
+  color: #666666;                      /* medium gray text for states */
 }
 
 /*-----------------------------------------
-Bottom navigation bar
+ Bottom navigation bar
 -----------------------------------------*/
 .bottom-nav {
-  background-color: var(--nav-bg);
-  color: var(--nav-text);
-  padding: 1rem 0;
-  display: flex;
-  justify-content: space-around;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+  background-color: var(--nav-bg);     /* use navbar background variable */
+  color: var(--nav-text);              /* use navbar text variable */
+  padding: 1rem 0;                     /* vertical padding */
+  display: flex;                       /* enable flex layout */
+  justify-content: space-around;       /* space items evenly */
+  border-top: 1px solid rgba(255,255,255,0.2); /* subtle top border */
+  width: 100%;                         /* full width */
+  position: fixed;                     /* stick to bottom */
+  bottom: 0;                           /* position at bottom */
 }
 
 .nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.9rem;
-  cursor: pointer;
+  display: flex;                       /* enable flex layout */
+  flex-direction: column;             /* stack icon and label */
+  align-items: center;                /* center horizontally */
+  font-size: 0.9rem;                   /* slightly smaller font */
+  cursor: pointer;                     /* pointer on hover */
 }
 
 .nav-item.active span {
-  font-weight: bold;
-  text-decoration: underline;
+  font-weight: bold;                   /* emphasize active item */
+  text-decoration: underline;          /* underline active item */
 }
 
 /*-----------------------------------------
-Card container used across views
+ Card container used across views
 -----------------------------------------*/
 .card {
-  background-color: var(--card-bg);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
-  width: 100%;
-  max-width: 420px;
-  box-sizing: border-box;
+  background-color: var(--card-bg);    /* use card background variable */
+  border-radius: 16px;                 /* rounded corners */
+  padding: 1.5rem;                     /* internal spacing */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* subtle shadow */
+  margin-bottom: 2rem;                 /* space below cards */
+  width: 100%;                         /* full width of parent */
+  max-width: 420px;                    /* restrict maximum width */
+  box-sizing: border-box;              /* include padding and border in width */
 }
 
 /*-----------------------------------------
-Mobile adjustments
+ Mobile adjustments
 -----------------------------------------*/
 @media (max-width: 480px) {
   .card {
-	padding: 1rem;
-	border-radius: 12px;
+    padding: 1rem;                     /* reduce padding on small screens */
+    border-radius: 12px;               /* slightly smaller corners */
   }
 
   .logo-title {
-	font-size: 1.5rem;
+    font-size: 1.5rem;                 /* smaller logo title */
   }
 
   .timer-display .time {
-	font-size: 3rem;
+    font-size: 3rem;                   /* smaller time on mobile */
   }
 }

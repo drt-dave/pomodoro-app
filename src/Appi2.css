@@ -1,0 +1,342 @@
+/*-----------------------------------------
+Global color variables
+These values define the modern color palette
+-----------------------------------------*/
+/* Light mode
+:root {
+--work-color: #ff3b30;
+--break-color: #4ecdc4;
+--bg-color: #f9f9f9;
+--text-color: #333;
+--accent: #ff9f1c;
+--card-bg: #ffffff;
+--nav-bg: var(--work-color);
+--nav-text: #ffffff;
+--input-bg: #ffffff;
+--input-text: #333;
+}
+ */
+
+/* Dark mode */
+:root {
+  --work-color: #ff3b30;       /* strong red for work */
+  --break-color: #4ecdc4;      /* vibrant teal for breaks */
+  --bg-color: #121212;         /* deep dark background */
+  --text-color: #e0e0e0;       /* light gray text */
+  --accent: #ff9f1c;           /* bright orange highlight */
+  --card-bg: #1e1e1e;          /* dark gray cards */
+  --nav-bg: #b30000;           /* deep red navbar */
+  --nav-text: #ffffff;         /* white nav text */
+  --input-bg: #2a2a2a;         /* dark input background */
+  --input-text: #ffffff;       /* white input text */
+}
+/*-----------------------------------------
+Base layout styles
+-----------------------------------------*/
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/*-----------------------------------------
+Header styles
+-----------------------------------------*/
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-title {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: var(--work-color);
+}
+
+/*-----------------------------------------
+Main content area
+-----------------------------------------*/
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.mode-subtitle {
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/*-----------------------------------------
+Timer component styles
+-----------------------------------------*/
+
+.timer-container {
+  text-align: center;
+}
+
+.timer-display {
+  margin: 0.5rem 0;
+}
+
+/* Countdown display when running */
+.timer-display .time {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+/* Editable input field for minutes (only when paused) */
+.time-input {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  width: 130px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  outline: none;
+  transition: border-bottom 0.2s ease;
+}
+
+/* Style when input is focused */
+.time-input:focus {
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Hide default up/down arrows on number inputs */
+.time-input::-webkit-outer-spin-button,
+.time-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.time-input {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+}
+
+/* Mode color indicators */
+.mode-indicator.work {
+  color: var(--work-color);
+}
+
+.mode-indicator.break {
+  color: var(--break-color);
+}
+
+/* Controls shown when timer is paused */
+.timer-controls {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Optional legacy adjustment input (can be removed if unused) */
+.time-adjustment input {
+  width: 80px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background: var(--input-bg);
+  color: var(--input-text);
+}
+
+/* Mode selection buttons */
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.mode-buttons button {
+  padding: 0.5rem 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode-buttons button.active {
+  background: var(--accent);
+  color: var(--nav-text);
+}
+
+/* Start/Pause button */
+.main-button {
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  max-width: 200px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--nav-text);
+  background: var(--work-color);
+}
+
+.main-button.pause {
+  background: #666;
+}
+
+/*-----------------------------------------
+Tag selector component
+-----------------------------------------*/
+.tag-selector {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.tag-dropdown {
+  font-size: 1rem;
+  max-width: 280px; /* limita el ancho */
+  margin: auto; /*limita visualmente */
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  background: var(--input-bg);
+  color: var(--input-text);
+  width: 100%;
+  box-sizing: border-box; /*centre horizontalmente */
+}
+
+.tag-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.add-tag-wrapper {
+  display: flex;
+  width: 100;
+  max-width:  280px; /* igual ancho que el select */
+  margin: 0 auto; /*centro*/
+  gap: 0.5rem;
+
+}
+
+.add-tag-wrapper input {
+  flex: 1;/* Espande el input a ocupar el espacio restante */
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--input-text));
+  box-sizing: border-box;
+}
+
+.add-tag-wrapper button {
+  background: var(--accent);
+  color: var(--nav-text);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*-----------------------------------------
+Statistics component wrapper
+-----------------------------------------*/
+.stats-card {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.loading-stats,
+.no-data {
+  color: #666;
+}
+
+/*-----------------------------------------
+Bottom navigation bar
+-----------------------------------------*/
+.bottom-nav {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.nav-item.active span {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*-----------------------------------------
+Card container used across views
+-----------------------------------------*/
+.card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+/*-----------------------------------------
+Mobile adjustments
+-----------------------------------------*/
+@media (max-width: 480px) {
+  .card {
+	padding: 1rem;
+	border-radius: 12px;
+  }
+
+  .logo-title {
+	font-size: 1.5rem;
+  }
+
+  .timer-display .time {
+	font-size: 3rem;
+  }
+}
+
